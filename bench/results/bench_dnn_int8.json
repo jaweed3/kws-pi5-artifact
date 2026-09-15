@@ -1,0 +1,69 @@
+{
+  "meta": {
+    "device": "raspberry-pi-5",
+    "machine": "aarch64",
+    "python": "3.13.5",
+    "kernel": "6.18.34+rpt-rpi-2712",
+    "governor_before": "performance",
+    "date": "2026-08-10 07:42:05",
+    "protocol": "warmup+measured, sequential, seed=42, IQR outliers, 10k bootstrap CI",
+    "governor_during": "performance"
+  },
+  "iters": 1000,
+  "warmup": 1000,
+  "models": {
+    "tflite": "models/trained/dnn/dnn_int8.tflite",
+    "onnx": "models/trained/dnn/dnn_fp32.onnx"
+  },
+  "tag": "dnn_int8",
+  "params": 88396,
+  "output_max_abs_diff_tfl_vs_onnx": 0.003603219985961914,
+  "temp_idle_c": 47.7,
+  "rss_idle_mb": 99.4,
+  "temp_after_tflite_c": 47.7,
+  "rss_after_tflite_mb": 99.4,
+  "temp_after_onnx_c": 47.2,
+  "rss_after_onnx_mb": 99.4,
+  "tflite": {
+    "n_raw": 1000,
+    "n_clean": 984,
+    "n_outliers": 16,
+    "mean_ms": 0.006724450229266654,
+    "median_ms": 0.006722000762238167,
+    "p95_ms": 0.0067590008256956935,
+    "p99_ms": 0.00677800017001573,
+    "std_ms": 2.2234944217406598e-05,
+    "ci95_ms": [
+      0.006723047771568351,
+      0.006725805907095728
+    ],
+    "fps": 148711.04192990015
+  },
+  "onnx": {
+    "n_raw": 1000,
+    "n_clean": 926,
+    "n_outliers": 74,
+    "mean_ms": 0.025731699748206622,
+    "median_ms": 0.025721999918459915,
+    "p95_ms": 0.026018000426120125,
+    "p99_ms": 0.02614799996081274,
+    "std_ms": 0.00015441943256047614,
+    "ci95_ms": [
+      0.025721865882562197,
+      0.025741642679453863
+    ],
+    "fps": 38862.5706729574
+  },
+  "accuracy": {
+    "tflite": {
+      "n": 4074,
+      "top1": 0.7965144820814923,
+      "wall_s": 3.0864539069989405
+    },
+    "onnx": {
+      "n": 4074,
+      "top1": 0.7962690230731467,
+      "wall_s": 3.5711336719996325
+    }
+  }
+}

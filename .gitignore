@@ -1,0 +1,20 @@
+# macOS
+.DS_Store
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+.venv_tf/
+venv/
+
+# Dataset & cache (regenerable, terlalu besar untuk GitHub)
+bench/data/
+**/data_cache.npz
+
+# Tooling cache
+.firecrawl/
+
+# Interim conversion artifacts (final: ICAITech2026_review.doc)
+main_review.doc
+main_review.docx
