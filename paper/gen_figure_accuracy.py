@@ -15,7 +15,7 @@ os.makedirs(FIGDIR, exist_ok=True)
 
 # model -> (label, fp32 accuracy, int8 accuracy, params)
 MODELS = [
-    ("DS-CNN", 90.55, 90.45, 22604),
+    ("DS-CNN", 90.55, 90.57, 22604),
     ("DNN", 79.63, 79.65, 88396),
     ("LSTM", 90.48, 87.43, 19980),
     ("CRNN", 92.56, 92.17, 56844),

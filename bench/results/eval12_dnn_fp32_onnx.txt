@@ -1,0 +1,18 @@
+  [12000/12005] acc_so_far=0.7265
+
+=== onnx :: models/trained/dnn/dnn_fp32.onnx ===
+n=12005  top1=0.7265  (8722/12005)
+feat_time_avg=0.79ms  infer_time_avg=0.091ms
+per-class:
+  Down       321/406 = 0.791
+  Go         252/402 = 0.627
+  Left       342/412 = 0.830
+  No         306/405 = 0.756
+  Off        330/402 = 0.821
+  On         322/396 = 0.813
+  Right      328/396 = 0.828
+  Stop       350/411 = 0.852
+  Up         330/425 = 0.776
+  Yes        363/419 = 0.866
+  Silence    987/1000 = 0.987
+  Unknown    4491/6931 = 0.648

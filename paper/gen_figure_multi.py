@@ -18,12 +18,14 @@ RESULTS = os.path.join(HERE, "..", "bench", "results")
 FIGDIR = os.path.join(HERE, "figures")
 os.makedirs(FIGDIR, exist_ok=True)
 
-# model -> (label, fp32 json, int8 json, params)
+# model -> (label, fp32 json, int8 json, int8 override from full-int8 json or None, params)
+# DS-CNN int8 comes from the new full-int8 quantization (bench_dscnn_fullint8.json),
+# not the mixed-precision artifact (benchmark_mixed_pi.json).
 MODELS = [
-    ("DS-CNN", "benchmark_kws_pi.json", "benchmark_mixed_pi.json", 22604),
-    ("DNN", "bench_dnn_fp32.json", "bench_dnn_int8.json", 88396),
-    ("LSTM", "bench_lstm_fp32.json", "bench_lstm_int8.json", 19980),
-    ("CRNN", "bench_crnn_fp32.json", "bench_crnn_int8.json", 56844),
+    ("DS-CNN", "benchmark_kws_pi.json", "benchmark_mixed_pi.json", "bench_dscnn_fullint8.json", 22604),
+    ("DNN", "bench_dnn_fp32.json", "bench_dnn_int8.json", None, 88396),
+    ("LSTM", "bench_lstm_fp32.json", "bench_lstm_int8.json", None, 19980),
+    ("CRNN", "bench_crnn_fp32.json", "bench_crnn_int8.json", None, 56844),
 ]
 RUNTIMES = ["TFLite fp32", "TFLite int8", "ONNX fp32"]
 COLORS = {"TFLite fp32": "#4C9BE8", "TFLite int8": "#E89B4C", "ONNX fp32": "#50B85E"}
@@ -39,7 +41,7 @@ def load(fname):
 
 def main():
     data = {}
-    for name, fp32f, int8f, params in MODELS:
+    for name, fp32f, int8f, overridef, params in MODELS:
         fp = load(fp32f)
         i8 = load(int8f)
         entry = {"mean": {}, "p99": {}, "fps": {}, "params": params}
@@ -52,7 +54,13 @@ def main():
             entry["mean"]["ONNX fp32"] = fp["onnx"]["mean_ms"]
             entry["p99"]["ONNX fp32"] = fp["onnx"]["p99_ms"]
             entry["fps"]["ONNX fp32"] = fp["onnx"]["fps"]
-        if i8 is not None:
+        if overridef is not None:
+            ov = load(overridef)
+            if ov is not None:
+                entry["mean"]["TFLite int8"] = ov["tflite"]["mean_ms"]
+                entry["p99"]["TFLite int8"] = ov["tflite"]["p99_ms"]
+                entry["fps"]["TFLite int8"] = ov["tflite"]["fps"]
+        elif i8 is not None:
             entry["mean"]["TFLite int8"] = i8["tflite"]["mean_ms"]
             entry["p99"]["TFLite int8"] = i8["tflite"]["p99_ms"]
             entry["fps"]["TFLite int8"] = i8["tflite"]["fps"]

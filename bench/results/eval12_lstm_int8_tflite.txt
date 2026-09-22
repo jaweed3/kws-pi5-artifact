@@ -1,0 +1,18 @@
+  [12000/12005] acc_so_far=0.8472
+
+=== tflite :: models/trained/lstm/lstm_int8.tflite ===
+n=12005  top1=0.8472  (10171/12005)
+feat_time_avg=0.73ms  infer_time_avg=0.282ms
+per-class:
+  Down       346/406 = 0.852
+  Go         308/402 = 0.766
+  Left       384/412 = 0.932
+  No         357/405 = 0.881
+  Off        324/402 = 0.806
+  On         333/396 = 0.841
+  Right      358/396 = 0.904
+  Stop       385/411 = 0.937
+  Up         371/425 = 0.873
+  Yes        396/419 = 0.945
+  Silence    983/1000 = 0.983
+  Unknown    5626/6931 = 0.812

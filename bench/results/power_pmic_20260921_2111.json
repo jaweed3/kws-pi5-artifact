@@ -1,0 +1,402 @@
+[
+  {
+    "model": "dscnn",
+    "runtime": "tflite",
+    "threads": 1,
+    "params": {
+      "iters": 10000,
+      "warmup": 500,
+      "seed": 42
+    },
+    "device": "raspberry-pi-5",
+    "platform": "Linux-6.18.34+rpt-rpi-2712-aarch64-with-glibc2.41",
+    "governor": "performance",
+    "temp_idle_c": null,
+    "power": {
+      "method": "pmic_read_adc (on-board PMIC, excludes USB peripherals)",
+      "p_idle_w": 1.9845,
+      "p_load_w": 3.5747,
+      "p_delta_w": 1.5901,
+      "e_per_inference_mj": 0.344414,
+      "e_total_j": 3.544309,
+      "elapsed_s": 2.23,
+      "idle_samples": 441,
+      "load_samples": 33,
+      "idle_summary": {
+        "n_samples": 441,
+        "mean_w": 1.9845224012364333,
+        "std_w": 0.13731281443384297,
+        "min_w": 1.87122615082825,
+        "max_w": 2.436782123034285
+      },
+      "load_summary": {
+        "n_samples": 33,
+        "mean_w": 3.5746713216650505,
+        "std_w": 0.09762706678253485,
+        "min_w": 3.36207957089507,
+        "max_w": 3.9133467638237898
+      }
+    },
+    "latency": {
+      "n_raw": 10000,
+      "n_clean": 8546,
+      "n_outliers": 1454,
+      "mean_ms": 0.21659201415867071,
+      "median_ms": 0.216573,
+      "std_ms": 0.0005727637540557843,
+      "p95_ms": 0.21761,
+      "p99_ms": 0.2181949
+    },
+    "date": "2026-09-21 21:07:52"
+  },
+  {
+    "model": "dscnn",
+    "runtime": "onnx",
+    "threads": 1,
+    "params": {
+      "iters": 10000,
+      "warmup": 500,
+      "seed": 42
+    },
+    "device": "raspberry-pi-5",
+    "platform": "Linux-6.18.34+rpt-rpi-2712-aarch64-with-glibc2.41",
+    "governor": "performance",
+    "temp_idle_c": null,
+    "power": {
+      "method": "pmic_read_adc (on-board PMIC, excludes USB peripherals)",
+      "p_idle_w": 1.9823,
+      "p_load_w": 3.1645,
+      "p_delta_w": 1.1822,
+      "e_per_inference_mj": 0.529818,
+      "e_total_j": 5.412744,
+      "elapsed_s": 4.58,
+      "idle_samples": 441,
+      "load_samples": 68,
+      "idle_summary": {
+        "n_samples": 441,
+        "mean_w": 1.9823034648438291,
+        "std_w": 0.1339014899104313,
+        "min_w": 1.8748616397098399,
+        "max_w": 2.62768389942934
+      },
+      "load_summary": {
+        "n_samples": 68,
+        "mean_w": 3.1644675671604188,
+        "std_w": 0.20068358907405595,
+        "min_w": 2.13665907402212,
+        "max_w": 3.5466183085117997
+      }
+    },
+    "latency": {
+      "n_raw": 10000,
+      "n_clean": 8777,
+      "n_outliers": 1223,
+      "mean_ms": 0.4481763045459724,
+      "median_ms": 0.44748,
+      "std_ms": 0.0028253024439599435,
+      "p95_ms": 0.45466939999999995,
+      "p99_ms": 0.457017
+    },
+    "date": "2026-09-21 21:08:27"
+  },
+  {
+    "model": "crnn",
+    "runtime": "tflite",
+    "threads": 1,
+    "params": {
+      "iters": 10000,
+      "warmup": 500,
+      "seed": 42
+    },
+    "device": "raspberry-pi-5",
+    "platform": "Linux-6.18.34+rpt-rpi-2712-aarch64-with-glibc2.41",
+    "governor": "performance",
+    "temp_idle_c": null,
+    "power": {
+      "method": "pmic_read_adc (on-board PMIC, excludes USB peripherals)",
+      "p_idle_w": 1.9418,
+      "p_load_w": 3.7886,
+      "p_delta_w": 1.8468,
+      "e_per_inference_mj": 0.505377,
+      "e_total_j": 5.307955,
+      "elapsed_s": 2.87,
+      "idle_samples": 441,
+      "load_samples": 42,
+      "idle_summary": {
+        "n_samples": 441,
+        "mean_w": 1.941798308878629,
+        "std_w": 0.08143089928299313,
+        "min_w": 1.87551440504854,
+        "max_w": 2.4386184537979396
+      },
+      "load_summary": {
+        "n_samples": 42,
+        "mean_w": 3.788572342805231,
+        "std_w": 0.20246383136252014,
+        "min_w": 3.3404221842749804,
+        "max_w": 4.35923707382333
+      }
+    },
+    "latency": {
+      "n_raw": 10000,
+      "n_clean": 8456,
+      "n_outliers": 1544,
+      "mean_ms": 0.27365408940397346,
+      "median_ms": 0.272703,
+      "std_ms": 0.0033187120801820096,
+      "p95_ms": 0.281221,
+      "p99_ms": 0.285203
+    },
+    "date": "2026-09-21 21:09:00"
+  },
+  {
+    "model": "crnn",
+    "runtime": "onnx",
+    "threads": 1,
+    "params": {
+      "iters": 10000,
+      "warmup": 500,
+      "seed": 42
+    },
+    "device": "raspberry-pi-5",
+    "platform": "Linux-6.18.34+rpt-rpi-2712-aarch64-with-glibc2.41",
+    "governor": "performance",
+    "temp_idle_c": null,
+    "power": {
+      "method": "pmic_read_adc (on-board PMIC, excludes USB peripherals)",
+      "p_idle_w": 1.9576,
+      "p_load_w": 3.5358,
+      "p_delta_w": 1.5782,
+      "e_per_inference_mj": 0.778874,
+      "e_total_j": 7.986934,
+      "elapsed_s": 5.06,
+      "idle_samples": 441,
+      "load_samples": 74,
+      "idle_summary": {
+        "n_samples": 441,
+        "mean_w": 1.9576005229830944,
+        "std_w": 0.10794979604844414,
+        "min_w": 1.8688760698130302,
+        "max_w": 2.5231369063660702
+      },
+      "load_summary": {
+        "n_samples": 74,
+        "mean_w": 3.5357825266889833,
+        "std_w": 0.22993116249054762,
+        "min_w": 3.18080405529836,
+        "max_w": 4.06217976299161
+      }
+    },
+    "latency": {
+      "n_raw": 10000,
+      "n_clean": 8498,
+      "n_outliers": 1502,
+      "mean_ms": 0.49352597293480815,
+      "median_ms": 0.493239,
+      "std_ms": 0.0031648276308353534,
+      "p95_ms": 0.500406,
+      "p99_ms": 0.50353654
+    },
+    "date": "2026-09-21 21:09:35"
+  },
+  {
+    "model": "dnn",
+    "runtime": "tflite",
+    "threads": 1,
+    "params": {
+      "iters": 10000,
+      "warmup": 500,
+      "seed": 42
+    },
+    "device": "raspberry-pi-5",
+    "platform": "Linux-6.18.34+rpt-rpi-2712-aarch64-with-glibc2.41",
+    "governor": "performance",
+    "temp_idle_c": null,
+    "power": {
+      "method": "pmic_read_adc (on-board PMIC, excludes USB peripherals)",
+      "p_idle_w": 1.9502,
+      "p_load_w": 3.4942,
+      "p_delta_w": 1.544,
+      "e_per_inference_mj": 0.030963,
+      "e_total_j": 0.377075,
+      "elapsed_s": 0.24,
+      "idle_samples": 441,
+      "load_samples": 4,
+      "idle_summary": {
+        "n_samples": 441,
+        "mean_w": 1.9502086559801244,
+        "std_w": 0.09386980567547377,
+        "min_w": 1.877073924274375,
+        "max_w": 2.5087376713020797
+      },
+      "load_summary": {
+        "n_samples": 4,
+        "mean_w": 3.4942452656366876,
+        "std_w": 0.020963149386764305,
+        "min_w": 3.47710929032147,
+        "max_w": 3.52932152338717
+      }
+    },
+    "latency": {
+      "n_raw": 10000,
+      "n_clean": 9643,
+      "n_outliers": 357,
+      "mean_ms": 0.02005313512392409,
+      "median_ms": 0.020019,
+      "std_ms": 0.0003363385662163904,
+      "p95_ms": 0.020666,
+      "p99_ms": 0.020907
+    },
+    "date": "2026-09-21 21:10:05"
+  },
+  {
+    "model": "dnn",
+    "runtime": "onnx",
+    "threads": 1,
+    "params": {
+      "iters": 10000,
+      "warmup": 500,
+      "seed": 42
+    },
+    "device": "raspberry-pi-5",
+    "platform": "Linux-6.18.34+rpt-rpi-2712-aarch64-with-glibc2.41",
+    "governor": "performance",
+    "temp_idle_c": null,
+    "power": {
+      "method": "pmic_read_adc (on-board PMIC, excludes USB peripherals)",
+      "p_idle_w": 1.9551,
+      "p_load_w": 3.4386,
+      "p_delta_w": 1.4834,
+      "e_per_inference_mj": 0.052499,
+      "e_total_j": 0.636453,
+      "elapsed_s": 0.43,
+      "idle_samples": 441,
+      "load_samples": 7,
+      "idle_summary": {
+        "n_samples": 441,
+        "mean_w": 1.9551312698119563,
+        "std_w": 0.1006191871966032,
+        "min_w": 1.87658877475034,
+        "max_w": 2.54050093746533
+      },
+      "load_summary": {
+        "n_samples": 7,
+        "mean_w": 3.43855062779485,
+        "std_w": 0.12456425682032919,
+        "min_w": 3.27787968148123,
+        "max_w": 3.64841422116674
+      }
+    },
+    "latency": {
+      "n_raw": 10000,
+      "n_clean": 9331,
+      "n_outliers": 669,
+      "mean_ms": 0.035390847819097626,
+      "median_ms": 0.03537,
+      "std_ms": 0.0005301890337616118,
+      "p95_ms": 0.036315,
+      "p99_ms": 0.036722
+    },
+    "date": "2026-09-21 21:10:36"
+  },
+  {
+    "model": "lstm",
+    "runtime": "tflite",
+    "threads": 1,
+    "params": {
+      "iters": 10000,
+      "warmup": 500,
+      "seed": 42
+    },
+    "device": "raspberry-pi-5",
+    "platform": "Linux-6.18.34+rpt-rpi-2712-aarch64-with-glibc2.41",
+    "governor": "performance",
+    "temp_idle_c": null,
+    "power": {
+      "method": "pmic_read_adc (on-board PMIC, excludes USB peripherals)",
+      "p_idle_w": 1.949,
+      "p_load_w": 3.758,
+      "p_delta_w": 1.8089,
+      "e_per_inference_mj": 0.735158,
+      "e_total_j": 7.737735,
+      "elapsed_s": 4.28,
+      "idle_samples": 441,
+      "load_samples": 63,
+      "idle_summary": {
+        "n_samples": 441,
+        "mean_w": 1.9490367515089295,
+        "std_w": 0.10027817271135016,
+        "min_w": 1.8773471779097002,
+        "max_w": 2.5520017568357796
+      },
+      "load_summary": {
+        "n_samples": 63,
+        "mean_w": 3.757952796921668,
+        "std_w": 0.3047862137180862,
+        "min_w": 3.0514176713578998,
+        "max_w": 4.229684841759671
+      }
+    },
+    "latency": {
+      "n_raw": 10000,
+      "n_clean": 9597,
+      "n_outliers": 403,
+      "mean_ms": 0.4064078774617068,
+      "median_ms": 0.401462,
+      "std_ms": 0.013380424097176737,
+      "p95_ms": 0.43516879999999997,
+      "p99_ms": 0.44248171999999997
+    },
+    "date": "2026-09-21 21:11:11"
+  },
+  {
+    "model": "lstm",
+    "runtime": "onnx",
+    "threads": 1,
+    "params": {
+      "iters": 10000,
+      "warmup": 500,
+      "seed": 42
+    },
+    "device": "raspberry-pi-5",
+    "platform": "Linux-6.18.34+rpt-rpi-2712-aarch64-with-glibc2.41",
+    "governor": "performance",
+    "temp_idle_c": null,
+    "power": {
+      "method": "pmic_read_adc (on-board PMIC, excludes USB peripherals)",
+      "p_idle_w": 1.9506,
+      "p_load_w": 3.2629,
+      "p_delta_w": 1.3123,
+      "e_per_inference_mj": 0.951804,
+      "e_total_j": 9.704973,
+      "elapsed_s": 7.4,
+      "idle_samples": 441,
+      "load_samples": 109,
+      "idle_summary": {
+        "n_samples": 441,
+        "mean_w": 1.9506495646116055,
+        "std_w": 0.0939263903812925,
+        "min_w": 1.8693115348229399,
+        "max_w": 2.60013037878768
+      },
+      "load_summary": {
+        "n_samples": 109,
+        "mean_w": 3.2629064726606893,
+        "std_w": 0.20711522022934375,
+        "min_w": 1.93292948581276,
+        "max_w": 3.74086670618659
+      }
+    },
+    "latency": {
+      "n_raw": 10000,
+      "n_clean": 9387,
+      "n_outliers": 613,
+      "mean_ms": 0.7253184843933099,
+      "median_ms": 0.723035,
+      "std_ms": 0.011018086047912571,
+      "p95_ms": 0.7461776,
+      "p99_ms": 0.7556269999999999
+    },
+    "date": "2026-09-21 21:11:48"
+  }
+]

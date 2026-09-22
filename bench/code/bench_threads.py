@@ -146,6 +146,15 @@ def main():
     ap.add_argument("--output", default="results/bench_threads.json")
     args = ap.parse_args()
 
+    if args.wav is None and not os.path.exists(args.wavlist):
+        for cand in ("data/testlist_10.tsv", "data/testlist.tsv",
+                     "../data/testlist.tsv", "testlist.tsv"):
+            if os.path.exists(cand):
+                print(f"wavlist {args.wavlist} not found, using {cand}",
+                      flush=True)
+                args.wavlist = cand
+                break
+
     feat = None
     src = args.wav
     if src is None:

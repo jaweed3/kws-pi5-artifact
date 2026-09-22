@@ -1,0 +1,36 @@
+in_scale=0.5847029089927673 in_zp=83 out_scale=0.00390625 out_zp=-128
+  [200/4074] acc_so_far=0.8600
+  [400/4074] acc_so_far=0.8925
+  [600/4074] acc_so_far=0.8683
+  [800/4074] acc_so_far=0.8800
+  [1000/4074] acc_so_far=0.8890
+  [1200/4074] acc_so_far=0.8983
+  [1400/4074] acc_so_far=0.8943
+  [1600/4074] acc_so_far=0.8956
+  [1800/4074] acc_so_far=0.8989
+  [2000/4074] acc_so_far=0.8995
+  [2200/4074] acc_so_far=0.8982
+  [2400/4074] acc_so_far=0.8971
+  [2600/4074] acc_so_far=0.8965
+  [2800/4074] acc_so_far=0.8989
+  [3000/4074] acc_so_far=0.9003
+  [3200/4074] acc_so_far=0.9028
+  [3400/4074] acc_so_far=0.9026
+  [3600/4074] acc_so_far=0.9019
+  [3800/4074] acc_so_far=0.9039
+  [4000/4074] acc_so_far=0.9045
+
+=== tflite-int8io :: models/kws_ref_model_int8.tflite ===
+n=4074  top1=0.9050  (3687/4074)
+feat_time_avg=0.74ms  infer_time_avg=0.155ms
+per-class:
+  Down       360/406 = 0.887
+  Go         352/402 = 0.876
+  Left       385/412 = 0.934
+  No         359/405 = 0.886
+  Off        368/402 = 0.915
+  On         350/396 = 0.884
+  Right      362/396 = 0.914
+  Stop       380/411 = 0.925
+  Up         381/425 = 0.896
+  Yes        390/419 = 0.931

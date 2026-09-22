@@ -12,10 +12,9 @@ float32 ONNX Runtime) on a Raspberry Pi 5, under one controlled protocol.
 | Path | Contents |
 |---|---|
 | `paper/` | LaTeX source (`main.tex`), compiled PDF, `refs.bib`, figure scripts |
-| `bench/code/` | Full pipeline: train → export → quantize → benchmark → evaluate |
-| `bench/models/` | All model artifacts (MLPerf reference + trained `.keras`/`.tflite`/`.onnx`) |
-| `bench/results/` | Raw benchmark JSONs (latency, accuracy, protocol metadata) |
-| `SESSION_RUNBOOK.md` | Step-by-step revision experiment session guide |
+| `bench/code/` | Full pipeline: train → export → quantize → benchmark → evaluate; `pmic_power.py` (on-board energy via PMIC), `bench_threads.py` (1/2/4-thread sweep), `evaluate_int8io.py` (eval for the int8-I/O mixed-precision artifact) |
+| `bench/models/` | All model artifacts (MLPerf reference + trained `.keras`/`.tflite`/`.onnx`), incl. `kws_ref_model_fullint8.tflite` (full-int8 DS-CNN, 47KB) |
+| `bench/results/` | Raw benchmark JSONs (latency, accuracy, protocol metadata) + `eval12_*` (full 12-class accuracy) + `bench_threads.json` + `power_pmic_20260921_2111.json` (8 energy configs) |
 
 ## Reproduce (on a Raspberry Pi 5)
 

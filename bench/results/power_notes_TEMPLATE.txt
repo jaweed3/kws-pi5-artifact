@@ -1,0 +1,44 @@
+# POWER LOG — Pi5 KWS revision session (ICAITech)
+# Cara pakai: copy file ini jadi power_notes.txt di Pi5, isi kolom WATT saat run.
+# Rumus: mJ/inf = W_load * mean_ms  (karena joule = W*d detik, x1000 jadi mJ — angkanya pas W*mean_ms)
+# Contoh: 5.2 W * 0.2107 ms = 1.096 mJ/inf
+#
+# Alat: USB meter inline ke Pi5. Catat:
+#  - W_idle  : Pi5 idle, governor performance, sebelum run (tunggu stabil ~30 dtk)
+#  - W_load  : angka stabil saat measured-pass berjalan (abaikan spike awal warmup)
+#  - Kalau meter berfluktuasi, catat rentang (mis. 5.1-5.3) lalu pakai tengahnya.
+
+tanggal      : 2026-09-16 (sore)
+device       : raspberry-pi-5 (Pi5)
+meter        : <merk/tipe alat, mis. USB tester X>
+governor     : performance
+W_idle       : _____ W
+temp_idle_c  : _____ C
+
+# model | runtime | threads | mean_ms (sudah ada = baseline, KOSONG = diisi sesi ini) | W_load | mJ/inf
+dscnn_fp32   tflite  T=1   mean=0.2107 ms (baseline bench)   W=_____  mJ=_____
+dscnn_fp32   onnx    T=1   mean=0.1702 ms (baseline bench)   W=_____  mJ=_____
+crnn_fp32    tflite  T=1   mean=0.2586 ms (baseline bench)   W=_____  mJ=_____
+crnn_fp32    onnx    T=1   mean=0.3609 ms (baseline bench)   W=_____  mJ=_____
+dscnn_fp32   tflite  T=2   mean=_____ ms (sesi ini)           W=_____  mJ=_____
+dscnn_fp32   tflite  T=4   mean=_____ ms (sesi ini)           W=_____  mJ=_____
+dscnn_fp32   onnx    T=2   mean=_____ ms (sesi ini)           W=_____  mJ=_____
+dscnn_fp32   onnx    T=4   mean=_____ ms (sesi ini)           W=_____  mJ=_____
+crnn_fp32    tflite  T=2   mean=_____ ms (sesi ini)           W=_____  mJ=_____
+crnn_fp32    tflite  T=4   mean=_____ ms (sesi ini)           W=_____  mJ=_____
+crnn_fp32    onnx    T=2   mean=_____ ms (sesi ini)           W=_____  mJ=_____
+crnn_fp32    onnx    T=4   mean=_____ ms (sesi ini)           W=_____  mJ=_____
+dscnn_fullint8 tflite T=1  mean=_____ ms (sesi ini)           W=_____  mJ=_____
+
+# Format tabel buat revisi paper (tab:lat perluasan / paragraf R1 point 2):
+# | model | runtime | W_idle | W_load | mean_ms | mJ/inf |
+# Isi mJ/inf = W_load * mean_ms. Satu baris per config di atas.
+# Kalau ada config yang watt-nya tidak sempat diukur: tulis n/a + satu kalimat
+# future-work di paper ("energy measurement limited to X configs"), JANGAN ngarang angka.
+
+# Checklist pulang (git add + push dari Pi5):
+# [ ] results/bench_threads.json
+# [ ] results/bench_dscnn_fullint8.json
+# [ ] results/eval12_*.txt
+# [ ] models/kws_ref_model_fullint8.tflite (26KB, boleh commit)
+# [ ] power_notes.txt (file ini, sudah diisi)

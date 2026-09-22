@@ -1,0 +1,18 @@
+  [12000/12005] acc_so_far=0.7189
+
+=== tflite :: models/trained/dnn/dnn_int8.tflite ===
+n=12005  top1=0.7190  (8631/12005)
+feat_time_avg=0.72ms  infer_time_avg=0.027ms
+per-class:
+  Down       324/406 = 0.798
+  Go         262/402 = 0.652
+  Left       344/412 = 0.835
+  No         301/405 = 0.743
+  Off        330/402 = 0.821
+  On         324/396 = 0.818
+  Right      331/396 = 0.836
+  Stop       351/411 = 0.854
+  Up         317/425 = 0.746
+  Yes        361/419 = 0.862
+  Silence    985/1000 = 0.985
+  Unknown    4401/6931 = 0.635

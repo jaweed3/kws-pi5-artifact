@@ -1,0 +1,18 @@
+  [12000/12005] acc_so_far=0.8884
+
+=== tflite :: models/trained/lstm/lstm_fp32.tflite ===
+n=12005  top1=0.8884  (10665/12005)
+feat_time_avg=0.87ms  infer_time_avg=0.514ms
+per-class:
+  Down       369/406 = 0.909
+  Go         340/402 = 0.846
+  Left       387/412 = 0.939
+  No         359/405 = 0.886
+  Off        352/402 = 0.876
+  On         347/396 = 0.876
+  Right      365/396 = 0.922
+  Stop       388/411 = 0.944
+  Up         381/425 = 0.896
+  Yes        398/419 = 0.950
+  Silence    998/1000 = 0.998
+  Unknown    5981/6931 = 0.863
